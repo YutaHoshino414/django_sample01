@@ -1,4 +1,6 @@
-### DB設定
+## DB設定
+
+### ライブラリ
 ```
 pip install dj-database-url
 pip install python-dotenv
@@ -19,7 +21,7 @@ DATABASES = {
 }
 ```
 
-### MySQLプロジェクトDB作成
+### プロジェクトDB作成(MySQL)
 ```
 mysql -u root
 > ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';
