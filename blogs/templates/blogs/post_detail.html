@@ -20,5 +20,7 @@
         <td><time>{{ post.updated }}</time></td>
     </tr>
 </table>
+<a href="{% url 'update' post_id=post.id %}" class="btn btn-success">編集</a>
+<a href="{% url 'delete' post_id=post.id %}" class="btn btn-danger">削除</a><br><hr>
 <a href="{% url 'index' %}" class="btn btn-outline-info">一覧へ戻る</a>
 {% endblock %}

@@ -1,0 +1,29 @@
+{% extends "blogs/base.html" %}
+
+{% block main %}
+<h2>
+    {% if not form.instance.pk %}
+    登録する
+    {% else %}
+    情報を更新する
+    {% endif %}
+</h2><br>
+<form action="" method="POST">
+    <table class="table table-bordered">
+        <tr>
+          <th>タイトル</th>
+          <td>{{ form.title }}</td>
+        </tr>
+        <tr>
+          <th>本文</th>
+          <td>{{ form.body }}</td>
+        </tr>
+        <tr>
+            <th>カテゴリー</th>
+            <td>{{ form.category }}</td>
+          </tr>
+    </table>
+    <button type="submit" class="btn btn-primary">送信</button>
+    {% csrf_token %}
+</form>
+{% endblock %}

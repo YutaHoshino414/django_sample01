@@ -1,0 +1,25 @@
+{% extends 'blogs/base.html' %}
+
+{% block main %}
+<h3>削除確認</h3><br>
+<form action="" method="POST">
+  <table class="table">
+      <tr>
+        <th>タイトル</th>
+        <td>{{ post.title }}</td>
+      </tr>
+      <tr>
+        <th>本文</th>
+        <td>{{ post.body }}</td>
+      </tr>
+      <tr>
+        <th>カテゴリ</th>
+        <td>{{ post.category }}</td>
+      </tr>
+  </table>
+  <p>こちらのデータを削除します。</p>
+  <button type="submit" class="btn btn-danger">送信</button>
+  {% csrf_token %}
+</form><hr>
+<a href="{% url 'index' %}" class="btn btn-outline-info">一覧へ戻る</a>
+{% endblock %}
