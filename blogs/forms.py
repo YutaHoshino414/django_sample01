@@ -5,4 +5,4 @@ class PostCreateForm(forms.ModelForm): # DjangoのModelFormでは強力なValida
 
     class Meta: 
         model = Post 
-        fields = '__all__'
+        fields = ("title", "body", "category")

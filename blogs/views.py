@@ -23,7 +23,10 @@ def create(request):
     if request.method == 'POST':
         form = PostCreateForm(request.POST)
         if form.is_valid():
-            form.save()
+            post = form.save(commit=False)
+            post.user = request.user
+            print(post)
+            post.save()
             return redirect('index')
 
     return render(request, 'blogs/post_form.html', {'form':form})

@@ -8,8 +8,14 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="{% url 'index' %}">匿名ブログ</a>
-            <a class="navbar-brand" href="{% url 'profile' %}">プロフィール</a>
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'index' %}">ブログ</a>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'profile' %}">プロフィール</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
             <div class="container mt-4">
             {% block main %}
